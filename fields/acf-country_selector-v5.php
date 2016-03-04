@@ -132,9 +132,6 @@ class acf_field_country_selector extends acf_field {
 		*  This will show what data is available
 		*/
 		?>
-		<pre>
-			<?php print_r($field) ?>
-		</pre>
 		<div>
 			<select name='<?php echo $field['name'] ?>'>
 				<?php
