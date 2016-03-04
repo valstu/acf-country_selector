@@ -52,7 +52,7 @@ class acf_field_country_selector extends acf_field {
 		*/
 		
 		$this->defaults = array(
-			'value' => 'United States',
+			'initial_value' => 'FI',
 		);
 		
 		
@@ -132,12 +132,19 @@ class acf_field_country_selector extends acf_field {
 		*  This will show what data is available
 		*/
 		?>
+		<pre>
+			<?php print_r($field) ?>
+		</pre>
 		<div>
 			<select name='<?php echo $field['name'] ?>'>
 				<?php
-					foreach( $this->get_countries() as $country ) :
+					foreach( $this->get_countries() as $code => $country ):
 				?>
-					<option <?php selected( $field['value'], $country ) ?> value='<?php echo $country ?>'><?php echo $country ?></option>
+					<?php if (empty($field['value'])): ?>
+						<option <?php selected( $field['initial_value'], $code ) ?> value='<?php echo $code ?>'><?php print_r($country); ?></option>
+					<?php else: ?>
+						<option <?php selected( $field['value'], $code ) ?> value='<?php echo $code ?>'><?php print_r($country); ?></option>
+					<?php endif ?>
 				<?php endforeach; ?>
 			</select>
 		</div>
