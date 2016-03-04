@@ -98,8 +98,8 @@ class acf_field_country_selector extends acf_field {
 		*/
 		
 		acf_render_field_setting( $field, array(
-			'label'			=> __('Country Selector','acf-country_selector'),
-			'instructions'	=> __('Select country','acf-country_selector'),
+			'label'			=> __('Default Country','acf-country_selector'),
+			'instructions'	=> __('Country that will be selected by default','acf-country_selector'),
 			'type'			=> 'select',
 			'name'			=> 'initial_value',
 			'choices'		=> $this->get_countries(),
